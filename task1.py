@@ -19,8 +19,18 @@ round(103.2221,2) -> 103.22
 """
 
 openBalance = 1000
-deposits = [200,200,200,200,200,200,200,200,200,200,200,200]            # final: 3328.8
-#deposits = [500,1000,300,-250,500,185,-500,205,1200,-550,125,200]      # final: 3887.71
-#deposits = [1000,542,221.52,983,29.75,-10,982.23,10988,287,198,32,100]  # final: 16702.93
+deposits = [200,200,200,200,200,200,200,200,200,200,200,200]                # final: 3528.8
+#deposits = [500,1000,300,-250,500,185,-500,205,1200,-550,125,200]          # final: 4087.71
+#deposits = [1000,542,221.52,983,29.75,-10,982.23,10988,287,198,32,100]     # final: 16802.93
+"""for i in deposits:
+    interest = round(openBalance*.005,2)
+    close = openBalance + interest + i
+    print(openBalance, i, close)
+    openBalance = close"""
 
-    
+#openBalance = 1000
+for i in deposits:
+    #print(openBalance, round(openBalance*.005,2),end="")
+    openBalance = round(openBalance + (openBalance * 0.005),2)
+    openBalance = openBalance + i
+    print(f"your balence is ${openBalance}" ''' , deposits[i]''')
